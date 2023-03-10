@@ -13,9 +13,10 @@ function Hero() {
           <Box flex={1} pt={6}>
             <Heading
               fontWeight={800}
-              fontSize={pxToRem(48)}
+              fontSize={pxToRem(46)}
               lineHeight={1.4}
               mb={6}
+              textTransform="capitalize"
             >
               Find love for your Floofy <br /> friends with Floofer
             </Heading>
