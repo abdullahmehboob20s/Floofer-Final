@@ -1,6 +1,9 @@
 import { Box, Image } from "@chakra-ui/react";
 import Navbar from "components/Navbar";
-import Hero from "layout/Hero";
+import Featured from "sections/Featured";
+import Hero from "sections/Hero";
+import Products from "sections/Products";
+import Whitepaper from "sections/Whitepaper";
 
 const App = () => {
   return (
@@ -15,6 +18,10 @@ const App = () => {
           zIndex={-1}
         />
       </Box>
+
+      <Featured />
+      <Products />
+      <Whitepaper />
     </div>
   );
 };
