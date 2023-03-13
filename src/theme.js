@@ -32,7 +32,13 @@ const theme = extendTheme({
     bg: "#FFDCAA",
     textColor: "#0F0901",
     sky: "#96DAE7",
+    sky2: "#7DDFF0",
+    skyLight: "#C4E9F5",
     skySharp: "#01A0BE",
+
+    orange: {
+      pure: "#F26E4F",
+    },
 
     pink: {
       light: "#FFCBD9",
