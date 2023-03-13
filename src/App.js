@@ -2,7 +2,10 @@ import { Box, Image } from "@chakra-ui/react";
 import Navbar from "components/Navbar";
 import Featured from "sections/Featured";
 import Hero from "sections/Hero";
+import HowToBuy from "sections/HowToBuy";
 import Products from "sections/Products";
+import Team from "sections/Team";
+import Tokenomics from "sections/Tokenomics";
 import Whitepaper from "sections/Whitepaper";
 
 const App = () => {
@@ -22,6 +25,9 @@ const App = () => {
       <Featured />
       <Products />
       <Whitepaper />
+      <Tokenomics />
+      <HowToBuy />
+      <Team />
     </div>
   );
 };
