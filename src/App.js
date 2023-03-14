@@ -2,6 +2,7 @@ import { Box, Image } from "@chakra-ui/react";
 import Navbar from "components/Navbar";
 import Community from "sections/Community";
 import Featured from "sections/Featured";
+import FlooferBar from "sections/FlooferBar";
 import Footer from "sections/Footer";
 import Hero from "sections/Hero";
 import HowToBuy from "sections/HowToBuy";
@@ -21,21 +22,29 @@ const App = () => {
 
         <Image
           src="images/hero-paint.svg"
-          sx={{ position: "absolute", top: 0, right: 0, width: "80%" }}
-          zIndex={-1}
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "80%",
+          }}
+          zIndex={-100}
         />
       </Box>
 
-      <Featured />
-      <Products />
-      <Whitepaper />
-      <Roadmap />
-      <Tokenomics />
-      <HowToBuy />
-      <Team />
-      <Community />
-      <MoreAboutFloofer />
-      <Footer />
+      <Box zIndex={10} position="relative">
+        <FlooferBar />
+        <Featured />
+        <Products />
+        <Whitepaper />
+        <Roadmap />
+        <Tokenomics />
+        <HowToBuy />
+        <Team />
+        <Community />
+        <MoreAboutFloofer />
+        <Footer />
+      </Box>
     </div>
   );
 };

@@ -70,6 +70,7 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       "html, body": {
+        overflowX: "hidden",
         backgroundColor: "bg",
         color: "textColor",
       },

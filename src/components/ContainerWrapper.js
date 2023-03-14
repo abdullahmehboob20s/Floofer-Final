@@ -12,7 +12,7 @@ const variants = {
   },
 };
 
-function ContainerWrapper({ children, variant = "1200px" }) {
+function ContainerWrapper({ children, variant = "1200px", ...props }) {
   return (
     <Container
       maxWidth={variants[variant].maxWidth}
@@ -20,6 +20,7 @@ function ContainerWrapper({ children, variant = "1200px" }) {
       my={0}
       mx="auto"
       p={0}
+      {...props}
     >
       {children}
     </Container>

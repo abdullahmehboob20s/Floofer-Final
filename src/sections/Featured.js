@@ -16,7 +16,7 @@ const featuredImgs = [
 
 function Featured() {
   return (
-    <Box as="section" bgColor="skySharp" pt={24} pb={24}>
+    <Box as="section" bgColor="skySharp" pt={32} pb={24}>
       <ContainerWrapper>
         <Title>Featured In</Title>
 
