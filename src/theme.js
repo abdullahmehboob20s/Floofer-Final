@@ -35,6 +35,7 @@ const theme = extendTheme({
     sky2: "#7DDFF0",
     skyLight: "#C4E9F5",
     skySharp: "#01A0BE",
+    nightBlue: "#3A3B47",
 
     orange: {
       pure: "#F26E4F",
