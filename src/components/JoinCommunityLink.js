@@ -3,18 +3,18 @@ import { useTheme } from "@emotion/react";
 import React from "react";
 import pxToEm from "utils/pxToEm";
 
-function JoinCommunityLink({ title, iconImg }) {
+function JoinCommunityLink({ title, iconImg, ...props }) {
   const theme = useTheme();
 
   return (
     <Stack
-      fontSize="100%"
+      fontSize={{ base: "50%", md: "70%", xl: "100%" }}
       flex={1}
       as={Link}
       href="/"
       target="_blank"
       height={pxToEm(100)}
-      px={pxToEm(36)}
+      px={{ md: pxToEm(36) }}
       bg="white"
       border="2px solid"
       borderColor="textColor"
@@ -22,7 +22,7 @@ function JoinCommunityLink({ title, iconImg }) {
       boxShadow={`${pxToEm(10)} ${pxToEm(10)} 0 ${theme.colors.shadow}`}
       display="flex"
       alignItems="center"
-      spacing={pxToEm(12)}
+      spacing={{ base: pxToEm(8), md: pxToEm(12) }}
       justifyContent="center"
       direction="row"
       transition="all .2s ease"
@@ -35,14 +35,15 @@ function JoinCommunityLink({ title, iconImg }) {
         top: pxToEm(10),
         left: pxToEm(10),
       }}
+      {...props}
     >
-      <Box as="span" width={pxToEm(60)}>
+      <Box as="span" width={{ base: pxToEm(46), md: pxToEm(60) }}>
         <Image src={iconImg} width="100%" />
       </Box>
       <Text
         as="span"
         textDecoration="none"
-        fontSize={pxToEm(30)}
+        fontSize={{ base: pxToEm(28), md: pxToEm(30) }}
         fontWeight={800}
       >
         {title}

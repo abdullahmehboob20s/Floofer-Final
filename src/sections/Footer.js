@@ -6,7 +6,13 @@ import pxToRem from "utils/pxToRem";
 
 const FooterLink = ({ children }) => {
   return (
-    <Link color="white" opacity={0.8} width="fit-content" display="block">
+    <Link
+      color="white"
+      opacity={0.8}
+      width="fit-content"
+      display="block"
+      fontSize={{ base: pxToRem(14), xl: pxToRem(16) }}
+    >
       {children}
     </Link>
   );
@@ -15,7 +21,7 @@ const FooterLink = ({ children }) => {
 function Footer() {
   return (
     <Box
-      pt={20}
+      pt={{ base: 12, lg: 14, xl: 20 }}
       pb={0}
       as="section"
       bg="nightBlue"
@@ -25,14 +31,23 @@ function Footer() {
       position="relative"
     >
       <ContainerWrapper>
-        <Grid templateColumns="1fr .5fr" gap={pxToRem(100)}>
-          <Stack direction="row" spacing={8}>
+        <Grid
+          templateColumns={{ base: "1fr", lg: "1fr .5fr" }}
+          gap={{ base: pxToRem(50), lg: pxToRem(100) }}
+        >
+          <Stack
+            direction={{ base: "column", lg: "row" }}
+            spacing={{ base: 5, xl: 8 }}
+          >
             <Box>
-              <Image src="images/logo.svg" minW={pxToRem(110)} />
+              <Image
+                src="images/logo.svg"
+                minW={{ base: pxToRem(60), xl: pxToRem(110) }}
+              />
             </Box>
             <Box>
               <Title
-                mb={6}
+                mb={{ base: 4, lg: 6 }}
                 variant={28}
                 fontWeight={700}
                 textAlign="left"
@@ -40,7 +55,13 @@ function Footer() {
               >
                 About floofer
               </Title>
-              <Text color="white" opacity={0.8} lineHeight={1.8} maxW="80%">
+              <Text
+                color="white"
+                opacity={0.8}
+                lineHeight={1.8}
+                maxW={{ base: "100%", lg: "80%" }}
+                fontSize={{ base: pxToRem(14), xl: pxToRem(16) }}
+              >
                 Floofer is a cryptocurrency which allows all dog lovers to swipe
                 right on their Floof’s potential love and gain utilitarian
                 benefits in the real world.
@@ -78,9 +99,18 @@ function Footer() {
         </Grid>
       </ContainerWrapper>
 
-      <Box py={10} borderTop="2px solid rgba(255,255,255,.4)" mt={20}>
+      <Box
+        py={{ base: 6, xl: 10 }}
+        borderTop="2px solid rgba(255,255,255,.4)"
+        mt={{ base: 16, xl: 20 }}
+      >
         <ContainerWrapper>
-          <Text textAlign="center" color="white" opacity={0.6}>
+          <Text
+            textAlign="center"
+            color="white"
+            opacity={0.6}
+            fontSize={{ base: pxToRem(14), xl: pxToRem(16) }}
+          >
             © Copyright 2023 floofer. All rights reserved.
           </Text>
         </ContainerWrapper>

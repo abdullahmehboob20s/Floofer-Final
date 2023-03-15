@@ -1,20 +1,27 @@
-import { Box, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Grid, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import ContainerWrapper from "components/ContainerWrapper";
 import JoinCommunityLink from "components/JoinCommunityLink";
 import Title from "components/Title";
 import React from "react";
 import pxToEm from "utils/pxToEm";
+import pxToRem from "utils/pxToRem";
 
 function Community() {
   return (
-    <Box as="section" py={24} bg="sky2" position="relative" zIndex={10}>
+    <Box
+      as="section"
+      py={{ base: 16, xl: 24 }}
+      bg="sky2"
+      position="relative"
+      zIndex={10}
+    >
       <ContainerWrapper variant="1000px">
         <Box
           maxW={pxToEm(800)}
           mx="auto"
-          fontSize="90%"
+          fontSize={{ base: "40%", md: "60%", xl: "90%" }}
           position="relative"
-          mb={12}
+          mb={{ base: 8, xl: 12 }}
         >
           <Image
             src="images/community-dogs.svg"
@@ -35,7 +42,12 @@ function Community() {
           </Heading>
         </Box>
 
-        <Text textAlign="center" mb={16} lineHeight={1.8}>
+        <Text
+          textAlign="center"
+          mb={{ base: 10, md: 14, xl: 16 }}
+          lineHeight={1.8}
+          fontSize={{ base: pxToRem(14), xl: pxToRem(16) }}
+        >
           We are encouraging new talented people to join our community, as this
           is the most important driving force behind Floofer’s success. Being in
           the crypto space is exciting, and there is a lot of potential here.
@@ -46,7 +58,10 @@ function Community() {
           etc.
         </Text>
 
-        <Stack direction="row" spacing={10}>
+        <Grid
+          templateColumns={{ base: "repeat(2,1fr)", sm: "repeat(3,1fr)" }}
+          gap={{ base: 3, sm: 6, md: 10 }}
+        >
           <JoinCommunityLink
             title="Twitter"
             iconImg="images/icons/twitter.svg"
@@ -58,8 +73,9 @@ function Community() {
           <JoinCommunityLink
             title="Telegram"
             iconImg="images/icons/telegram.svg"
+            gridColumn={{ base: "1/-1", sm: "unset" }}
           />
-        </Stack>
+        </Grid>
       </ContainerWrapper>
 
       <Image

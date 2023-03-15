@@ -23,7 +23,7 @@ const variants = {
   42: { fontSize: pxToRem(42) },
   40: { fontSize: pxToRem(40) },
   30: { fontSize: pxToRem(30) },
-  28: { fontSize: pxToRem(28) },
+  28: { fontSize: { base: pxToRem(24), xl: pxToRem(28) } },
   26: { fontSize: pxToRem(26) },
   24: { fontSize: { base: pxToRem(18), lg: pxToRem(20), xl: pxToRem(24) } },
   22: { fontSize: pxToRem(22) },
@@ -35,7 +35,7 @@ function Title({ children, variant = "50", ...props }) {
     <Heading
       fontWeight="900"
       color="textColor"
-      mb={16}
+      mb={{ base: 12, lg: 16 }}
       textAlign="center"
       {...variants[variant]}
       {...props}

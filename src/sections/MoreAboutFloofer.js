@@ -9,22 +9,27 @@ function MoreAboutFloofer() {
   return (
     <Box
       as="section"
-      pt={24}
-      pb={48}
+      pt={{ base: 12, md: 16, xl: 24 }}
+      pb={{ base: 24, lg: 48 }}
       position="relative"
       zIndex={10}
       overflow="hidden"
     >
       <ContainerWrapper>
         <Stack alignItems="center" spacing="none">
-          <Title mb={6}>Wanna Know More About Floofer?</Title>
+          <Title mb={{ base: 5, lg: 6 }}>Wanna Know More About Floofer?</Title>
 
-          <Text maxW={pxToRem(600)} textAlign="center" lineHeight={1.8}>
+          <Text
+            maxW={pxToRem(600)}
+            fontSize={{ base: pxToRem(14), xl: pxToRem(16) }}
+            textAlign="center"
+            lineHeight={1.8}
+          >
             Read our detailed documentation containing resources, FAQs and
             explanations to suit your needs.
           </Text>
 
-          <HeroButton mt={8} gradient="none" bg="white">
+          <HeroButton mt={{ base: 6, lg: 8 }} gradient="none" bg="white">
             Read Whitepaper
           </HeroButton>
         </Stack>

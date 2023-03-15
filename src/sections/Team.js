@@ -15,11 +15,20 @@ const data = [
 
 function Team() {
   return (
-    <Box as="section" py={24} position="relative" zIndex={10}>
+    <Box
+      as="section"
+      py={{ base: 12, md: 16, xl: 20 }}
+      position="relative"
+      zIndex={10}
+    >
       <ContainerWrapper>
         <Title>Floofer Team</Title>
 
-        <Grid templateColumns="repeat(3,1fr)" columnGap={6} rowGap={14}>
+        <Grid
+          templateColumns={{ base: "repeat(2,1fr)", lg: "repeat(3,1fr)" }}
+          columnGap={6}
+          rowGap={{ base: 10, lg: 14 }}
+        >
           {data.map((item, index) => (
             <TeamCard key={index} img={item.img} name={item.name} />
           ))}
