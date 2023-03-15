@@ -16,9 +16,15 @@ const featuredImgs = [
 
 function Featured() {
   return (
-    <Box as="section" bgColor="skySharp" pt={32} pb={24}>
+    <Box
+      as="section"
+      bgColor="skySharp"
+      pt={{ base: 12, sm: 14, lg: 28, xl: 32 }}
+      pb={{ base: 12, sm: 14, lg: 20, xl: 24 }}
+      borderRadius={{ base: pxToRem(20), lg: 0 }}
+    >
       <ContainerWrapper>
-        <Title>Featured In</Title>
+        <Title mb={{ base: 10, xl: 16 }}>Featured In</Title>
 
         <Box
           sx={{
@@ -26,16 +32,16 @@ function Featured() {
             flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
-            my: -5,
-            mx: -5,
+            my: { base: -3, xl: -5 },
+            mx: { base: -3, xl: -5 },
           }}
         >
           {featuredImgs.map((item, i) => (
             <Image
               src={item.img}
               key={i}
-              height={pxToRem(60)}
-              sx={{ m: 5 }}
+              height={{ base: pxToRem(24), sm: pxToRem(40), xl: pxToRem(60) }}
+              sx={{ m: { base: 3, xl: 5 } }}
               alt=""
             />
           ))}

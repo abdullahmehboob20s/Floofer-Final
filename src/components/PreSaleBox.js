@@ -1,44 +1,48 @@
 import { Box, Button, Heading, Image, Link, Text } from "@chakra-ui/react";
+import useBreakpoints from "hooks/useBreakpoints";
 import React from "react";
+import pxToEm from "utils/pxToEm";
 import pxToRem from "utils/pxToRem";
 import PresaleProgress from "./PresaleProgress";
 
 function PreSaleBox() {
+  const { isLargerThanLG } = useBreakpoints();
+
   return (
-    <Box position="relative" zIndex={1}>
+    <Box position="relative" zIndex={1} fontSize={{ base: "80%", xl: "100%" }}>
       <Box
         bg="sky"
         border="2px solid #0F0901"
-        pt={pxToRem(36)}
-        pb={pxToRem(26)}
-        px={pxToRem(38)}
-        borderRadius={pxToRem(50)}
-        boxShadow="1rem 1rem 0px #0E879E"
-        width={pxToRem(480)}
+        pt={{ base: pxToEm(30), sm: pxToEm(36) }}
+        pb={pxToEm(26)}
+        px={{ base: pxToEm(30), sm: pxToEm(38) }}
+        borderRadius={pxToEm(50)}
+        boxShadow="1em 1em 0px #0E879E"
+        width={{ base: "100%", lg: pxToEm(480) }}
         zIndex={2}
       >
         <Heading
           textAlign="center"
-          fontSize={pxToRem(26)}
+          fontSize={pxToEm(26)}
           sx={{ textTransform: "uppercase" }}
-          mb={pxToRem(32)}
+          mb={{ base: pxToEm(16), sm: pxToEm(20) }}
         >
           PRESALE STAGE
         </Heading>
 
         <Box
           bgGradient="linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)"
-          py={pxToRem(40)}
-          px={pxToRem(34)}
-          border="3px solid #0F0901"
-          borderRadius={pxToRem(50)}
-          mb={pxToRem(31)}
+          py={{ base: pxToEm(30), sm: pxToEm(40) }}
+          px={{ base: pxToEm(24), sm: pxToEm(34) }}
+          border={`${pxToEm(3)} solid #0F0901`}
+          borderRadius={pxToEm(50)}
+          mb={pxToEm(31)}
         >
           <Heading
             textAlign="center"
-            fontSize={pxToRem(24)}
+            fontSize={pxToEm(24)}
             sx={{ textTransform: "uppercase" }}
-            mb={pxToRem(26)}
+            mb={pxToEm(16)}
             lineHeight={1}
           >
             ROUND 1
@@ -49,8 +53,8 @@ function PreSaleBox() {
             fontWeight={800}
             textAlign="center"
             color="textColor"
-            fontSize={pxToRem(16)}
-            mb={pxToRem(16)}
+            fontSize={pxToEm(16)}
+            mb={pxToEm(16)}
           >
             USDT Raised $102,375.39/$2,080,000
           </Text>
@@ -62,9 +66,9 @@ function PreSaleBox() {
             fontWeight={800}
             textAlign="center"
             color="textColor"
-            fontSize={pxToRem(16)}
-            mt={pxToRem(26)}
-            mb={pxToRem(11)}
+            fontSize={pxToEm(16)}
+            mt={pxToEm(26)}
+            mb={pxToEm(11)}
           >
             152,124,970 Tokens Remaining Until
           </Text>
@@ -73,7 +77,7 @@ function PreSaleBox() {
             textAlign="center"
             fontWeight={400}
             color="textColor"
-            mb={pxToRem(12)}
+            mb={pxToEm(12)}
           >
             1 Floofer = 0.000045 USDT
           </Text>
@@ -83,7 +87,7 @@ function PreSaleBox() {
             fontWeight={800}
             textAlign="center"
             color="textColor"
-            fontSize={pxToRem(16)}
+            fontSize={pxToEm(16)}
           >
             Buy before price increase!
           </Text>
@@ -94,13 +98,13 @@ function PreSaleBox() {
           fontFamily="jost"
           fontWeight={700}
           color="textColor"
-          py={pxToRem(15)}
+          py={pxToEm(15)}
           width="100%"
-          borderRadius={pxToRem(16)}
+          borderRadius={pxToEm(16)}
           bg="white"
           border="2px solid"
           borderColor="textColor"
-          fontSize={pxToRem(16)}
+          fontSize={pxToEm(16)}
           cursor="pointer"
           mb={4}
         >
@@ -108,7 +112,7 @@ function PreSaleBox() {
         </Button>
 
         <Link
-          fontSize={pxToRem(18)}
+          fontSize={pxToEm(18)}
           display="block"
           w="fit-content"
           mx="auto"
@@ -117,16 +121,18 @@ function PreSaleBox() {
           How To Buy
         </Link>
       </Box>
-      <Image
-        src="images/presale-art.svg"
-        sx={{
-          position: "absolute",
-          top: "80%",
-          left: "20%",
-          width: "90%",
-          zIndex: -2,
-        }}
-      />
+      {isLargerThanLG && (
+        <Image
+          src="images/presale-art.svg"
+          sx={{
+            position: "absolute",
+            top: "80%",
+            left: "20%",
+            width: "90%",
+            zIndex: -2,
+          }}
+        />
+      )}
     </Box>
   );
 }

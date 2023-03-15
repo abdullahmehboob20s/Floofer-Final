@@ -1,5 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import React from "react";
+import pxToEm from "utils/pxToEm";
 import pxToRem from "utils/pxToRem";
 
 function PresaleProgress({ progress = 50 }) {
@@ -10,7 +11,7 @@ function PresaleProgress({ progress = 50 }) {
         borderColor: "textColor",
         borderRadius: "50px",
         bgColor: "pink.light",
-        height: pxToRem(35),
+        height: pxToEm(35),
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
@@ -30,7 +31,7 @@ function PresaleProgress({ progress = 50 }) {
           mx: "-1px",
         }}
       >
-        <Text fontWeight={700} fontSize={pxToRem(20)} color="textColor">
+        <Text fontWeight={700} fontSize={pxToEm(20)} color="textColor">
           {progress}%
         </Text>
       </Box>

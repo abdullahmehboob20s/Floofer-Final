@@ -7,19 +7,36 @@ import pxToRem from "utils/pxToRem";
 
 function Roadmap() {
   return (
-    <Box as="section" py={24} bg="sky" position="relative" zIndex={10}>
+    <Box
+      as="section"
+      py={{ base: 16, sm: 20, xl: 24 }}
+      bg="sky"
+      position="relative"
+      zIndex={10}
+    >
       <ContainerWrapper>
         <Title mb={0}>Roadmap</Title>
 
         <Image
           src="images/roadmap-dog.svg"
-          maxWidth={pxToRem(210)}
+          maxWidth={{
+            base: pxToRem(80),
+            sm: pxToRem(100),
+            md: pxToRem(150),
+            xl: pxToRem(180),
+          }}
           mb={4}
-          mt={-24}
+          mt={{ base: -14, md: -28 }}
           display="block"
         />
 
-        <Grid templateColumns="repeat(4,1fr)" gap={7} position="relative">
+        <Grid
+          templateColumns={{ sm: "repeat(2,1fr)", lg: "repeat(4,1fr)" }}
+          gap={7}
+          position="relative"
+          maxWidth={{ base: pxToRem(500), lg: "none" }}
+          mx={{ base: "auto", lg: "none" }}
+        >
           <RoadmapCard
             title="Q1 2023"
             points={[

@@ -3,14 +3,21 @@ import ContainerWrapper from "components/ContainerWrapper";
 import ProductCard from "components/ProductCard";
 import Title from "components/Title";
 import React from "react";
+import pxToRem from "utils/pxToRem";
 
 function Products() {
   return (
-    <Box as="section" py={24}>
+    <Box as="section" py={{ base: 16, md: 20, xl: 24 }}>
       <ContainerWrapper>
-        <Title mb={20}>Products</Title>
+        <Title mb={{ base: 12, md: 16, xl: 20 }}>Products</Title>
 
-        <Grid templateColumns="1fr 1fr" rowGap={16} columnGap={10}>
+        <Grid
+          maxW={{ base: pxToRem(500), lg: "none" }}
+          mx={{ base: "auto", lg: "none" }}
+          templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+          rowGap={{ base: 10, sm: 12, xl: 16 }}
+          columnGap={10}
+        >
           <ProductCard
             title="The Love NFT"
             img="images/products/1.svg"

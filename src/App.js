@@ -41,9 +41,9 @@ const App = () => {
         <Tokenomics />
         <HowToBuy />
         <Team />
-        <Community />
+        {/* <Community />
         <MoreAboutFloofer />
-        <Footer />
+        <Footer />  */}
       </Box>
     </div>
   );

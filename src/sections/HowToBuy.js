@@ -6,11 +6,20 @@ import React from "react";
 
 function HowToBuy() {
   return (
-    <Box as="section" py={24} bg="sky2" position="relative" zIndex={20}>
+    <Box
+      as="section"
+      py={{ base: 16, xl: 24 }}
+      bg="sky2"
+      position="relative"
+      zIndex={20}
+    >
       <ContainerWrapper>
-        <Title mb={20}>How To Buy</Title>
+        <Title mb={{ base: 14, sm: 16, xl: 20 }}>How To Buy</Title>
 
-        <Grid templateColumns="repeat(3,1fr)" gap={8}>
+        <Grid
+          templateColumns={{ base: "repeat(1,1fr)", lg: "repeat(3,1fr)" }}
+          gap={8}
+        >
           <HowToBuyCard
             img="images/how-to-buy/one.svg"
             desc="In order to participate in the Floofer token presale, you will first need to create an Ethereum wallet that supports ERC-20 tokens if you’re on desktop then we recommend Metamask, with Trust Wallet being the recommended wallet for mobile users."

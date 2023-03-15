@@ -13,14 +13,16 @@ function HeroButton({
       color="black"
       fontWeight={700}
       cursor="pointer"
-      py={pxToRem(22)}
-      px={pxToRem(36)}
+      height="auto"
+      py={{ base: pxToRem(8), lg: pxToRem(10), xl: pxToRem(12) }}
+      px={{ base: pxToRem(16), lg: pxToRem(20), xl: pxToRem(36) }}
       border="2px"
       borderRadius={pxToRem(10)}
       borderColor="textColor"
       bg={bg}
       bgGradient={gradient}
       display="flex"
+      fontSize={{ base: pxToRem(12), sm: pxToRem(14), xl: pxToRem(16) }}
       {...props}
     >
       {children}
